@@ -8,7 +8,7 @@ function TimeMsk() {
     return(
         <div className = "timeMSK" >
         <p>time:</p>
-       time:  <Moment format="YYYY-MM-DD HH:mm:ss" interval={10000} />
+       time:  <Moment format="YYYY-MM-DD HH:mm:ss" interval={1000} />
         </div>
 
     );
