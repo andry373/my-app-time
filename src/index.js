@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import TimeMsk from './Timeblock/index';
 import reportWebVitals from './reportWebVitals';
-
+import TimeMsk_native from './Timeblock/time_native';
+import App from './app/app';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-    <TimeMsk />
+    <App />
     
   </React.StrictMode>
 );

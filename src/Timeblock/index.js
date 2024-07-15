@@ -4,14 +4,16 @@ import Moment from "react-moment";
 
 function TimeMsk() {
     const date = new Date();
+    const text_test = 'timeMSK';
    
     return(
         <div className = "timeMSK" >
-        <p>time:</p>
+        <p>Время с библиотекой</p>
        time:  <Moment format="YYYY-MM-DD HH:mm:ss" interval={1000} />
-        </div>
+       {text_test} 
 
-    );
+        </div>
+        );
 
 }
 
