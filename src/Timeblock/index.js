@@ -3,7 +3,7 @@ import Moment from "react-moment";
 
 
 function TimeMsk() {
-    const date = new Date();
+   
     const text_test = 'timeMSK';
    
     return(
