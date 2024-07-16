@@ -11,6 +11,7 @@ setInterval (
     function() {
     var time_date_full = new Date();
     /*var time_date = new Date().getTime();*/
+    /*если нужно выводить абсолютное местное время, то будто бы 1 вариант getTimeZoneOffset(), вычесть разницу, добавить недостающее и вы в танцах */
         console.log(time_date_full);
         document.getElementById("time_1").innerHTML = (time_date_full.getHours() + ":" + time_date_full.getMinutes() + ":" + time_date_full.getSeconds());
         document.getElementById("time_2").innerHTML =time_date_full.toTimeString('ru-RU');
