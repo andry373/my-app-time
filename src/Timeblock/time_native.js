@@ -1,6 +1,12 @@
 import React from 'react';
 
-
+/*
+setInterval (
+    function() {
+    const time_date = new Date().toLocaleString();
+        console.log(time_date);
+      },1000);
+*/    
 
 function TimeMsk_native() {
     const text_test = 'timeMSK';
