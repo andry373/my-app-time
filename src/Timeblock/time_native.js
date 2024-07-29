@@ -10,31 +10,27 @@ const options = {
 setInterval (
     function() {
     var time_date_full = new Date();
-    /*var time_date = new Date().getTime();*/
-    /*если нужно выводить абсолютное местное время, то будто бы 1 вариант getTimeZoneOffset(), вычесть разницу, добавить недостающее и вы в танцах */
-        //console.log(time_date_full);
-        document.getElementById("time_1").innerHTML = (time_date_full.getHours() + ":" + time_date_full.getMinutes() + ":" + time_date_full.getSeconds());
-        document.getElementById("time_2").innerHTML =time_date_full.toTimeString('ru-RU');
-        document.getElementById("time_3").innerHTML =time_date_full.toString('ru-RU');
-        document.getElementById("time_4").innerHTML =time_date_full.toLocaleTimeString('ru-RU', options);
-        document.getElementById("time_5").innerHTML =time_date_full.toLocaleTimeString('ru-RU');
+
         document.getElementById("date").innerHTML = time_date_full;
+        absolute_time_msk();
       },1000);
   
 /* js приведение ко времени МСК */
 
-setInterval (
-    function() {
-        var local_time_to_msk = new Date();
-        var time_offset = local_time_to_msk.getTimezoneOffset();
-        console.log(time_offset);
-        var chours_offset = time_offset / 60;
-        console.log(chours_offset);
-        var zero_time = local_time_to_msk.setHours(1);
-        console.log(zero_time.toLocaleString());
+//setInterval (
+    function absolute_time_msk() {
+
+        const offset_time_msk = 180; 
+        const local_time = new Date();
+        const local_time_offset = local_time.getTimezoneOffset();
+        const abslt_time_msk_ms = local_time.setMinutes(local_time.getMinutes() + offset_time_msk + local_time_offset);
+        const abslt_time_msk = new Date(abslt_time_msk_ms);
+        document.getElementById("time_abs_MSK").innerHTML = abslt_time_msk.toTimeString();
+        document.getElementById("time_abs_MSK_2").innerHTML = abslt_time_msk.toLocaleTimeString('ru-RU');
+
     }
 
-)
+//)
 
 /* js приведение ко времени МСК */
 
@@ -49,12 +45,9 @@ function TimeMsk_native() {
     return (
  <div>
     <div id="date"></div>
-    <div id="time_1"></div>
-    <div id="time_2"></div>
-    <div id="time_3"></div>
-    <div id="time_4"></div>
-    <div id="time_5"></div>
+
     <div id="time_abs_MSK"></div>
+    <div id="time_abs_MSK_2"></div>
  </div>
  );
 }
